@@ -1,0 +1,1 @@
+// Logic script for the web-application of index file.
