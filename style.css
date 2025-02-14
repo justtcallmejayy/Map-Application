@@ -1,13 +1,21 @@
-/* Styling for my Index file */
+/* StAuth10244: I Jay Choksi, 000887533 certify that this material is my original work. No other person's work has been used without due acknowledgement. I have not made my work available to anyone else. */
 
-body {
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
-#map{
-    height: 700vh;
-    width: 1400vh;
-    position: absolute;
+
+#map {
+  width: 850px;
+  height: 50vh;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #map {
+    height: 50vh;
+  }
 }
