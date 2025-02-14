@@ -1,1 +1,13 @@
 /* Styling for my Index file */
+
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+#map{
+    height: 700vh;
+    width: 1400vh;
+    position: absolute;
+}
