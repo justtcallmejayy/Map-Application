@@ -146,7 +146,7 @@ function markUserLocation() {
 
         // Create a marker for the user's location with a custom icon
         new google.maps.Marker({
-          position: `pos`,
+          position: pos,
           map: map,
           title: "Your Current Location",
           icon: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png",
