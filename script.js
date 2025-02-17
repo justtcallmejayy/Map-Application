@@ -146,7 +146,7 @@ function markUserLocation() {
 
         // Create a marker for the user's location with a custom icon
         new google.maps.Marker({
-          position: `pos`,
+          position: pos,
           map: map,
           title: "Your Current Location",
           icon: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png",
@@ -162,6 +162,38 @@ function markUserLocation() {
   } else {
     alert("Oops, geolocation is not supported by your browser.");
   }
+}
+function addNewMarker(e) {
+  e.preventDefault();
+  const address = document.getElementById("address").value;
+  const name = document.getElementById("name").value;
+  const description = document.getElementById("description").value;
+  const category = document.getElementById("category").value;
+
+  const geocoder = new google.maps.Geocoder();
+  geocoder.geocode({ address: address }, (results, status) => {
+    if (status === "OK") {
+      const location = results[0].geometry.location;
+      const marker = new google.maps.Marker({
+        position: location,
+        map: map,
+        title: name,
+      });
+      marker.category = category;
+      marker.addListener("click", () => {
+        infoWindow.setContent(
+          `<h5>${name}</h5><p>${description}</p>
+           <button class="btn btn-sm btn-primary" onclick="getDirections(${location.lat()}, ${location.lng()})">Get Directions</button>`
+        );
+        infoWindow.open(map, marker);
+      });
+      markers.push(marker);
+      map.setCenter(location);
+      document.getElementById("markerForm").reset();
+    } else {
+      alert("Geocode was not successful for the following reason: " + status);
+    }
+  });
 }
 
 // Function to get directions from the user's location to the selected destination marker
