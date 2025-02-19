@@ -1,6 +1,6 @@
 # CitySights Hub
 
-## Overview
+## Overvie
 
 CitySights Hub is a web mapping application designed for tourists exploring Hamilton, Ontario. The application displays a variety of local attractions on a Google Map, allowing users to interact with markers, filter locations by category, add new attractions via a form, and obtain directions from their current location to any attraction.
 
